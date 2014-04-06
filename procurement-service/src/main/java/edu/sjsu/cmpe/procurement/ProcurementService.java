@@ -17,9 +17,7 @@ public class ProcurementService extends Service<ProcurementServiceConfiguration>
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
-    /**
-     * FIXME: THIS IS A HACK!
-     */
+    
     public static Client jerseyClient;
 
     public static void main(String[] args) throws Exception {
@@ -29,10 +27,7 @@ public class ProcurementService extends Service<ProcurementServiceConfiguration>
     @Override
     public void initialize(Bootstrap<ProcurementServiceConfiguration> bootstrap) {
 	bootstrap.setName("procurement-service");
-	/**
-	 * NOTE: All jobs must be placed under edu.sjsu.cmpe.procurement.jobs
-	 * package
-	 */
+	
 	bootstrap.addBundle(new JobsBundle("edu.sjsu.cmpe.procurement.jobs"));
     }
 
